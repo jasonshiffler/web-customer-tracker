@@ -21,7 +21,27 @@ public class CustomerServiceImpl implements CustomerService {
 	@Transactional // let the customer layer handle the transaction
 	public List<Customer> getCustomers() {
 		return customerDAO.getCustomers(); //Delegate the call to the customer dAO
+				
+	}
+
+	@Override
+	@Transactional
+	public void saveCustomer(Customer theCustomer) {
+		customerDAO.saveCustomer(theCustomer);
 		
+	}
+
+	@Override
+	@Transactional
+	public Customer getCustomer(int theId) {
+		
+		return customerDAO.getCustomer(theId);
+	}
+
+	@Override
+	@Transactional
+	public void deleteCustomer(int theId) {
+		customerDAO.deleteCustomer(theId);
 		
 	}
 
